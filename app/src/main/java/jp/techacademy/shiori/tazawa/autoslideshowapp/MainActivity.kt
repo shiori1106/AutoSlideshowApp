@@ -1,16 +1,14 @@
 package jp.techacademy.shiori.tazawa.autoslideshowapp
 
 import android.Manifest
-import android.content.ContentResolver
+import android.content.ContentUris
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
-import android.content.ContentUris
 import android.os.Handler
-import android.util.Log
+import android.provider.MediaStore
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -205,11 +203,11 @@ class MainActivity : AppCompatActivity() {
     private fun showAlertDialog(){
         val alertDialogBuilder = AlertDialog.Builder(this)
         // alertDialogBuilder.setTitle("Alert")
-        alertDialogBuilder.setMessage("端末情報にアクセスできないのでアプリを終了します")
+        alertDialogBuilder.setMessage("外部ストレージへのパーミッションを許可してください")
 
         // OKボタンを押すとアプリを終了する
         alertDialogBuilder.setPositiveButton("OK"){_,_ ->
-            finish()
+            // finish()
         }
 
         // AlertDialogを作成して表示する
